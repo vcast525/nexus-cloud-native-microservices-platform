@@ -1,0 +1,253 @@
+# ============================================================
+# NEXUS Cloud-Native Microservices Platform
+# Git Ignore Configuration
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Environment Variables and Secrets
+# ------------------------------------------------------------
+
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+
+secrets/
+*.secret
+*.secrets
+secret.yaml
+secrets.yaml
+kube-secrets.yaml
+*-secret.yaml
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+
+# ------------------------------------------------------------
+# Python Virtual Environments
+# ------------------------------------------------------------
+
+.venv/
+venv/
+env/
+ENV/
+
+
+# ------------------------------------------------------------
+# Python Generated Files
+# ------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.python-version
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+
+# ------------------------------------------------------------
+# Node.js and React Generated Files
+# ------------------------------------------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.yarn/
+.pnpm-store/
+
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+services/api_gateway/dist/
+services/api_gateway/build/
+
+services/service_registry/dist/
+services/service_registry/build/
+
+
+# ------------------------------------------------------------
+# Testing and Coverage
+# ------------------------------------------------------------
+
+coverage/
+test-results/
+playwright-report/
+playwright/.cache/
+blob-report/
+
+junit.xml
+test-report.xml
+
+
+# ------------------------------------------------------------
+# Application Logs
+# ------------------------------------------------------------
+
+logs/
+*.log
+*.log.*
+log/
+
+
+# ------------------------------------------------------------
+# Database and Local Data Files
+# ------------------------------------------------------------
+
+*.db
+*.sqlite
+*.sqlite3
+
+postgres-data/
+redis-data/
+grafana-data/
+prometheus-data/
+jaeger-data/
+
+
+# ------------------------------------------------------------
+# Docker Overrides and Local Files
+# ------------------------------------------------------------
+
+docker-compose.override.yml
+docker-compose.local.yml
+
+.docker/
+docker-data/
+
+
+# ------------------------------------------------------------
+# Kubernetes Local and Sensitive Files
+# ------------------------------------------------------------
+
+infrastructure/kubernetes/config/secret.yaml
+infrastructure/kubernetes/config/secrets.yaml
+infrastructure/kubernetes/config/*-secret.yaml
+infrastructure/kubernetes/config/*-secrets.yaml
+
+.kube/
+kubeconfig
+kubeconfig-*
+
+
+# ------------------------------------------------------------
+# Terraform Future Enhancement Files
+# ------------------------------------------------------------
+
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+.terraformrc
+terraform.rc
+
+
+# ------------------------------------------------------------
+# IDE and Editor Files
+# ------------------------------------------------------------
+
+.idea/
+.vscode/
+
+*.iml
+*.ipr
+*.iws
+
+.DS_Store
+Thumbs.db
+
+
+# ------------------------------------------------------------
+# Temporary and Backup Files
+# ------------------------------------------------------------
+
+tmp/
+temp/
+.cache/
+
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+
+*~
+.~lock.*
+
+
+# ------------------------------------------------------------
+# Operating System Files
+# ------------------------------------------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon?
+
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+# ------------------------------------------------------------
+# Generated Documentation and Reports
+# ------------------------------------------------------------
+
+site/
+docs/_build/
+reports/
+artifacts/
+
+
+# ------------------------------------------------------------
+# Local Demonstration Files
+# ------------------------------------------------------------
+
+local-data/
+demo-output/
+screenshots/private/
+
+
+# ------------------------------------------------------------
+# Keep Example and Template Files
+# ------------------------------------------------------------
+
+!.env.example
+!secret.example.yaml
+!secrets.example.yaml
+!*.example
