@@ -1,0 +1,52 @@
+# ============================================================
+# NEXUS Cloud-Native Microservices Platform
+# Local Docker Infrastructure
+# ============================================================
+#
+# This Docker Compose file initially provides the PostgreSQL
+# database infrastructure required by NEXUS.
+#
+# Additional application services will be added incrementally
+# as development progresses.
+# ============================================================
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nexus-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nexus}
+      POSTGRES_USER: ${POSTGRES_USER:-nexus_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nexus_local_password}
+
+    ports:
+      - "${POSTGRES_HOST_PORT:-5432}:5432"
+
+    volumes:
+      - nexus-postgres-data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-nexus_user} -d ${POSTGRES_DB:-nexus}"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+    networks:
+      - nexus-network
+
+volumes:
+  nexus-postgres-data:
+    name: nexus-postgres-data
+
+networks:
+  nexus-network:
+    name: nexus-network
+    driver: bridge
