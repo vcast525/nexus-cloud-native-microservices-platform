@@ -1,14 +1,43 @@
 # ============================================================
-# NEXUS Cloud-Native Microservices Platform
-# Root Development Dependencies
+# NEXUS Identity Service
+# Python Dependencies
 # ============================================================
-#
-# This file contains shared Python development dependencies
-# used across the NEXUS repository.
-#
-# Individual Python microservices and workers will maintain
-# their own service-specific requirements.txt files.
-# ============================================================
+
+
+# ------------------------------------------------------------
+# Web Application and API
+# ------------------------------------------------------------
+
+fastapi
+uvicorn[standard]
+
+
+# ------------------------------------------------------------
+# Data Validation and Configuration
+# ------------------------------------------------------------
+
+pydantic
+pydantic_settings
+python-dotenv
+email-validator
+
+
+# ------------------------------------------------------------
+# PostgreSQL and ORM
+# ------------------------------------------------------------
+
+sqlalchemy
+psycopg[binary]
+alembic
+
+
+# ------------------------------------------------------------
+# Authentication and Password Security
+# ------------------------------------------------------------
+
+passlib[bcrypt]
+bcrypt
+python-jose[cryptography]
 
 
 # ------------------------------------------------------------
@@ -16,40 +45,21 @@
 # ------------------------------------------------------------
 
 pytest
-pytest-cov
-pytest-mock
 pytest-asyncio
+pytest-cov
 httpx
 
 
 # ------------------------------------------------------------
-# Code Quality
+# Code Quality and Type Checking
 # ------------------------------------------------------------
 
 ruff
 black
-
-
-# ------------------------------------------------------------
-# Type Checking
-# ------------------------------------------------------------
-
 mypy
 
-
 # ------------------------------------------------------------
-# Security and Dependency Auditing
-# ------------------------------------------------------------
-
-pip-audit
-
-
-# ------------------------------------------------------------
-# Environment Configuration
+# Form Data Support
 # ------------------------------------------------------------
 
-python-dotenv
-pydantic-settings
-pydantic-settings
-sqlalchemy
-uliweb-alembic
+python-multipart
