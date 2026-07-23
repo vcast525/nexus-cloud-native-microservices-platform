@@ -12,7 +12,7 @@ config = context.config
 
 config.set_main_option(
     "sqlalchemy.url",
-    settings.database_url,
+    settings.DATABASE_URL,
 )
 
 if config.config_file_name is not None:
@@ -21,21 +21,36 @@ if config.config_file_name is not None:
 target_metadata = Base.metadata
 
 
+def include_object(object_, name, type_, reflected, compare_to):
+    """
+    Limit Alembic autogeneration to the Operations Service schemas.
+    """
+
+    schema = None
+
+    if hasattr(object_, "schema"):
+        schema = object_.schema
+
+    elif hasattr(object_, "table") and object_.table is not None:
+        schema = object_.table.schema
+
+    if schema is None:
+        return True
+
+    return schema in {"registry", "incidents"}
+
+
 def run_migrations_offline() -> None:
     """Run migrations without creating a live database connection."""
 
-    database_url = config.get_main_option("sqlalchemy.url")
-
     context.configure(
-        url=database_url,
+        url=settings.DATABASE_URL,
         target_metadata=target_metadata,
         literal_binds=True,
-        dialect_opts={
-            "paramstyle": "named",
-        },
+        dialect_opts={"paramstyle": "named"},
         include_schemas=True,
-        version_table_schema="identity",
         compare_type=True,
+        include_object=include_object,
     )
 
     with context.begin_transaction():
@@ -59,8 +74,8 @@ def run_migrations_online() -> None:
             connection=connection,
             target_metadata=target_metadata,
             include_schemas=True,
-            version_table_schema="identity",
             compare_type=True,
+            include_object=include_object,
         )
 
         with context.begin_transaction():
