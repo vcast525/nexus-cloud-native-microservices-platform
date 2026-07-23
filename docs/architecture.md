@@ -25,6 +25,7 @@ The architecture is designed to demonstrate:
 * Microservices architecture
 * Polyglot backend development
 * API gateway routing
+* 
 * Secure authentication
 * Role-based authorization
 * Service-to-service communication
@@ -1878,6 +1879,21 @@ Mitigation will include:
 * A controlled number of services
 * Incremental observability
 * Documented troubleshooting procedures
+
+---
+
+# Related Architecture Documents
+
+The NEXUS Cloud-Native Microservices Platform is documented through several complementary architecture documents, each focused on a specific aspect of the system.
+
+| Document | Purpose |
+|----------|---------|
+| architecture.md | Overall system architecture, application flow, infrastructure, and microservices |
+| database_architecture.md | Database domains, entity relationships, normalization strategy, and data modeling |
+| technical_design.md | Implementation strategy and technical decisions |
+| security_design.md | Authentication, authorization, and security architecture |
+| deployment_strategy.md | Docker, Kubernetes, and deployment workflows |
+| testing_strategy.md | Testing methodology and quality assurance |
 
 ---
 

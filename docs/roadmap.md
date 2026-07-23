@@ -250,41 +250,25 @@ PROJECT IMPLEMENTATION
 NEXUS will be implemented through eighteen major phases.
 
 ```text
-PHASE 1   → PROJECT FOUNDATION
+Phase 1  → Project Foundation
 
-PHASE 2   → DATABASE FOUNDATION
+Phase 2  → Core Backend Platform
 
-PHASE 3   → IDENTITY SERVICE
+Phase 3  → Distributed Processing
 
-PHASE 4   → SERVICE REGISTRY
+Phase 4  → API Platform
 
-PHASE 5   → INCIDENT SERVICE
+Phase 5  → Enterprise Data Platform & Analytics
 
-PHASE 6   → REDIS AND CELERY FOUNDATION
+Phase 6  → React Dashboard
 
-PHASE 7   → HEALTH MONITORING WORKER
+Phase 7  → Cloud-Native Deployment
 
-PHASE 8   → NOTIFICATION PROCESSING
+Phase 8  → Production Engineering
 
-PHASE 9   → API GATEWAY
+Phase 9  → System Validation
 
-PHASE 10  → REACT FRONTEND FOUNDATION
-
-PHASE 11  → FRONTEND FEATURE DEVELOPMENT
-
-PHASE 12  → DOCKER COMPOSE INTEGRATION
-
-PHASE 13  → KUBERNETES DEPLOYMENT
-
-PHASE 14  → OBSERVABILITY
-
-PHASE 15  → CI/CD AUTOMATION
-
-PHASE 16  → SECURITY HARDENING
-
-PHASE 17  → FINAL TESTING AND SYSTEM VALIDATION
-
-PHASE 18  → PORTFOLIO COMPLETION AND DEMONSTRATION
+Phase 10 → Portfolio Completion
 ```
 
 ---
@@ -1915,49 +1899,50 @@ A pull request should explain:
 PROJECT FOUNDATION
         │
         ▼
-DATABASE FOUNDATION
+CORE PLATFORM
+(Project + Database)
         │
-        ├──────────────┬────────────────┐
-        ▼              ▼                ▼
-IDENTITY SERVICE   SERVICE REGISTRY   INCIDENT SERVICE
-        │              │                │
-        └──────────────┴────────────────┘
+        ├──────────────┬─────────────────────┐
+        ▼              ▼                     ▼
+IDENTITY         SERVICE REGISTRY      INCIDENTS & OPERATIONS
+ SERVICE             SERVICE                SERVICES
+        │              │                     │
+        └──────────────┴─────────────────────┘
                        │
                        ▼
-                 REDIS + CELERY
+          DISTRIBUTED PROCESSING
+             (Redis + Celery)
                        │
                 ┌──────┴──────┐
                 ▼             ▼
-          HEALTH WORKER   NOTIFICATION WORKER
+         HEALTH WORKER   NOTIFICATION WORKER
                 │             │
                 └──────┬──────┘
                        │
                        ▼
-                  API GATEWAY
+              API PLATFORM
+          (Gateway + FastAPI)
                        │
                        ▼
-                 REACT FRONTEND
+     ENTERPRISE DATA PLATFORM
+     (Millions of Records + Analytics)
                        │
                        ▼
-                 DOCKER COMPOSE
+             REACT FRONTEND
                        │
                        ▼
-                   KUBERNETES
+        CLOUD-NATIVE PLATFORM
+      (Docker + Kubernetes)
                        │
                        ▼
-                  OBSERVABILITY
+      PRODUCTION ENGINEERING
+ (Observability + CI/CD + Security)
                        │
                        ▼
-                     CI/CD
+       FINAL TESTING & VALIDATION
                        │
                        ▼
-               SECURITY HARDENING
-                       │
-                       ▼
-                  FINAL TESTING
-                       │
-                       ▼
-               PORTFOLIO COMPLETION
+         PORTFOLIO COMPLETION
 ```
 
 ---
@@ -2023,58 +2008,34 @@ NEXUS is considered complete when:
 The NEXUS Development Plan provides a structured path from software requirements to a completed cloud-native application.
 
 ```text
-IDEA
-  │
-  ▼
-BUSINESS PROBLEM
-  │
-  ▼
-REQUIREMENTS
-  │
-  ▼
-ARCHITECTURE
-  │
-  ▼
-TECHNICAL DESIGN
-  │
-  ▼
-UX DESIGN
-  │
-  ▼
-SECURITY DESIGN
-  │
-  ▼
-TESTING STRATEGY
-  │
-  ▼
-DEVELOPMENT PLAN
-  │
-  ▼
-INCREMENTAL IMPLEMENTATION
-  │
-  ▼
-TESTING
-  │
-  ▼
-CONTAINERIZATION
-  │
-  ▼
-ORCHESTRATION
-  │
-  ▼
-OBSERVABILITY
-  │
-  ▼
-CI/CD
-  │
-  ▼
-SECURITY VALIDATION
-  │
-  ▼
-FINAL SYSTEM
-  │
-  ▼
-PORTFOLIO DEMONSTRATION
+Business Requirements
+        │
+        ▼
+System Design
+        │
+        ▼
+Backend Platform
+        │
+        ▼
+Distributed Processing
+        │
+        ▼
+Large-Scale Data Engineering
+        │
+        ▼
+React Dashboard
+        │
+        ▼
+Cloud-Native Deployment
+        │
+        ▼
+Production Engineering
+        │
+        ▼
+Testing & Validation
+        │
+        ▼
+Portfolio Demonstration
 ```
 
 The project will not be developed as one massive coding exercise.

@@ -25,6 +25,48 @@ NEXUS is being developed incrementally through a structured software development
 * Security validation
 * Final portfolio demonstration
 
+---
+# 🚧 Current Development Progress
+
+## Documentation
+
+- [x] Requirements
+- [x] System Architecture
+- [x] Database Architecture
+- [x] Technical Design
+- [x] Security Design
+- [x] Testing Strategy
+- [x] Deployment Strategy
+- [x] Roadmap
+- [x] User Experience Flow
+
+## Database
+
+- [x] PostgreSQL Infrastructure
+- [x] SQLAlchemy Base Models
+- [x] Operational Governance Models
+- [ ] Operations Platform Models
+- [ ] Identity Models
+- [ ] Enterprise Data Generator
+
+## Backend
+
+- [ ] FastAPI REST APIs
+- [ ] Swagger Documentation
+
+## Frontend
+
+- [ ] React Dashboard
+
+## Cloud Native
+
+- [ ] Docker Compose
+- [ ] Kubernetes
+- [ ] CI/CD
+- [ ] Observability
+
+---
+
 ## Planned Technology Stack
 
 ### Frontend
@@ -158,3 +200,178 @@ CI VALIDATION
     │
     ▼
 MERGE
+```
+
+---
+
+## 🏗️ Enterprise Domain Architecture
+
+Rather than modeling unrelated database tables, the NEXUS Cloud-Native Microservices Platform organizes its data into cohesive business domains. This mirrors how large enterprise software systems are designed, where each domain represents a distinct area of responsibility within the platform.
+
+The project is intentionally developed in phases, with each domain becoming a self-contained subsystem that can evolve independently while remaining connected through well-defined relationships.
+
+---
+
+### Service Catalog
+
+The Service Catalog represents the applications, APIs, and microservices managed by the platform. Nearly every operational record ultimately relates back to a service.
+
+#### Models
+
+- Service
+
+#### Responsibilities:
+
+- Application registry
+- Service ownership
+- Business metadata
+- Environment information
+- Dependency tracking
+
+---
+
+## Operational Governance
+
+The Operational Governance domain manages the lifecycle of production incidents and operational risk.
+
+#### Models
+
+- Incident
+- Issue
+- Change
+- RiskAssessment
+
+#### Responsibilities:
+
+- Incident management
+- Root cause tracking
+- Change management
+- Operational risk analysis
+- Corrective action tracking
+
+---
+
+### Operations Platform
+
+The Operations Platform records everything occurring within the production environment.
+
+#### Models
+
+- Deployment
+- AuditEvent
+- Notification
+- MaintenanceWindow
+
+#### Responsibilities:
+
+- Software deployments
+- Production audit history
+- Operational notifications
+- Planned maintenance scheduling
+- Production activity timeline
+
+---
+
+### Monitoring & Observability
+
+This domain provides continuous visibility into platform health and performance.
+
+#### Models
+
+- ApiHealth
+- Metric
+
+#### Responsibilities:
+
+- Health monitoring
+- Performance metrics
+- Availability reporting
+- Service status
+- Operational dashboards
+
+---
+
+### Identity & Access Management (Future Release)
+
+Identity will be implemented as a dedicated subsystem rather than mixed into operational functionality. This reflects how enterprise platforms typically separate authentication and authorization concerns from operational workflows.
+
+#### Planned Models
+
+- User
+- Role
+- Permission
+- ServiceOwnership
+
+#### Responsibilities:
+
+- Authentication
+- Authorization
+- Role-Based Access Control (RBAC)
+- Service ownership
+- Permission management
+
+---
+
+## 🏗️ Overall Domain Architecture
+
+
+``` text 
+Service
+│
+├── Operational Governance
+│   ├── Incident
+│   ├── Issue
+│   ├── Change
+│   └── RiskAssessment
+│
+├── Operations Platform
+│   ├── Deployment
+│   ├── AuditEvent
+│   ├── Notification
+│   └── MaintenanceWindow
+│
+├── Monitoring & Observability
+│   ├── ApiHealth
+│   └── Metric
+│
+└── Identity & Access (Future)
+    ├── User
+    ├── Role
+    ├── Permission
+    └── ServiceOwnership
+```
+---
+
+## Development Roadmap
+
+The project is intentionally developed using an enterprise-inspired lifecycle.
+
+Phase 1
+- Database architecture
+- SQLAlchemy models
+- PostgreSQL schema
+- Alembic migrations
+
+Phase 2
+- Enterprise data generation
+- Approximately one million interconnected records
+- Production-scale dataset validation
+
+Phase 3
+- FastAPI REST APIs
+- Swagger documentation
+- Repository and service layers
+
+Phase 4
+- React enterprise dashboard
+- Operational reporting
+- Monitoring and analytics
+
+Phase 5
+- Security
+- Authentication
+- RBAC
+- Production deployment
+- Kubernetes
+
+
