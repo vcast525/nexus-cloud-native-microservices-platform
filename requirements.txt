@@ -52,4 +52,7 @@ python-dotenv
 pydantic-settings
 pydantic-settings
 sqlalchemy
-uliweb-alembic
+uliweb-alembicpsycopg2-binary==2.9.10
+
+pydantic
+fastapi
